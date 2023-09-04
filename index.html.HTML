@@ -1,0 +1,106 @@
+<html>
+<head>
+    <title>Curriculo Juan Barros</title>
+    <style> 
+        body { /* Aqui fiz os estilos */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center; 
+        }
+        .secao-titulo {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            cursor: pointer;
+            text-align: left; /* Alinhado na esquerda */
+            text-decoration: underline; /* Sublinhado */
+        }
+        .conteudo {
+            display: none;
+            margin: 20px 0;
+            text-align: left;
+            border: 2px solid #ccc;
+            padding: 10px;
+        }
+        .nome {
+            font-size: 35px;
+        }
+        #mensagem-Saudacao {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #mensagem-Saudacao p {
+            font-size: 30px;
+            font-weight: bold; /* Negrito */
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function toggleSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            if (section.style.display === 'none') {
+                section.style.display = 'block';
+            } else {
+                section.style.display = 'none';
+            }
+        }
+        
+        function showCurriculo() {
+            var mensagemSaudacao = document.getElementById('mensagem-Saudacao');
+            var curriculo = document.getElementById('curriculo');
+            
+            mensagemSaudacao.style.display = 'none';
+            curriculo.style.display = 'block';
+        }
+    </script>
+</head>
+<body> 
+    <div id="mensagem-Saudacao"/* Fiz no final onde imaginei ser bom ter um ola antes de todo o curriculo*/> 
+        <p onclick="showCurriculo()"><strong>Olá, seja Bem Vinde ao meu Currículo Online</strong></p>
+    </div> 
+    
+    <div id="curriculo" style="display: none;">
+        <div class="header"/* Coloquei minhas informações superficiais visto que é so um trabalho */> 
+            <div class="nome">Juan Barros dos Santos</div>
+            <div class="informacoes">
+                Idade: 25 anos<br>
+                Data de Nascimento: 04/04/1500<br>
+                Endereço: Avenida Aldebaran de Ouro, Rio de Janeiro<br>
+                Estado Civil: Solteiro<br>
+            </div>
+        </div>
+    
+    <div class="secao-titulo" onclick="toggleSection('sobremim')">Sobre Mim</div/* a partiri da aqui apenas coloquei o que foi solicitado*/>
+    <div class="conteudo" id="sobremim">
+        <p>
+            Aqui estão algumas informações sobre mim:<br>
+	    Estou empenhado a conhecer novas tecnologias. Tenho experiência em banco de dados e atendimento ao cliente. Minha abordagem é focada em aprender, crescer e contribuir para projetos interessantes.
+        </p>
+    </div>
+    
+    <div class="secao-titulo" onclick="toggleSection('meuConhecimentoAcademico')">Meu Conhecimento Acadêmico</div>
+    <div class="conteudo" id="meuConhecimentoAcademico">
+        <p>
+            Cursando Tecnologo em Banco de dados, pela Universidade Uninter
+        </p>
+    </div>
+    
+    <div class="secao-titulo" onclick="toggleSection('contato')">Contatos</div>
+    <div class="conteudo" id="contato">
+        <p>
+            Você pode entrar em contato comigo através do telefone (69) 9090-8080 ou pelo email email@gmail.com.
+        </p>
+    </div>
+    
+    <div class="secao-titulo" onclick="toggleSection('portfolio')">Meu Portfólio</div>
+    <div class="conteudo" id="portfolio">
+        <p>
+            Esse Curriculo é meu portfolio ate então.
+        </p>
+    </div>
+</body>
+</html>
